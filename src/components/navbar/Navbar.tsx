@@ -50,6 +50,9 @@ const Navbar = () => {
                   {links.title}
                </Link>
             ))}
+            <button className="px-3 py-2 cursor-pointer bg-green-500 text-white rounded w-max">
+               Logout
+            </button>
          </div>
       </div>
    );
