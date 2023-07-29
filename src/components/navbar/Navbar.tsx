@@ -36,7 +36,7 @@ const links = [
 
 const Navbar = () => {
    return (
-      <div className="h-16 bg-gray-200 flex justify-between items-center px-8">
+      <div className="h-16 flex justify-between items-center px-8">
          <Link href="/" className="font-bold text-xl">
             Next Gen Blogs
          </Link>
