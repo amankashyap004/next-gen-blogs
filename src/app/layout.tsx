@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
    return (
       <html lang="en">
          <body
-            className={`${inter.className} flex flex-col justify-between min-h-[100vh]`}
+            className={`${inter.className} flex flex-col justify-between min-h-[100vh] px-12`}
             suppressHydrationWarning={true}
          >
             <Navbar />

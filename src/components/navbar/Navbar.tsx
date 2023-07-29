@@ -36,13 +36,17 @@ const links = [
 
 const Navbar = () => {
    return (
-      <div className="h-16 flex justify-between items-center px-8">
+      <div className="h-20 flex justify-between items-center">
          <Link href="/" className="font-bold text-xl">
             Next Gen Blogs
          </Link>
          <div className="flex items-center gap-4">
             {links.map((links) => (
-               <Link key={links.id} href={links.url} className="flex items-center gap-4">
+               <Link
+                  key={links.id}
+                  href={links.url}
+                  className="flex items-center gap-4 hover:text-green-500 text-base"
+               >
                   {links.title}
                </Link>
             ))}
