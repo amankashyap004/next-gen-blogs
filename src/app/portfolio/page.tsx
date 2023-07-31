@@ -8,7 +8,7 @@ const Portfolio = () => {
          <h1 className="text-xl font-bold mb-4">Choose a gallery</h1>
          <div className="flex gap-4">
             <Link href="/portfolio/illustrations">
-               <div className="w-64 h-96 relative border-2 border-gray-300 rounded">
+               <div className="w-64 h-96 relative border-2 border-gray-300 rounded hover:text-green-500">
                   <Image
                      src="/illustration.jpg"
                      alt="Illustration Gallery"
@@ -19,7 +19,7 @@ const Portfolio = () => {
                </div>
             </Link>
             <Link href="/portfolio/websites">
-               <div className="w-64 h-96 relative border-2 border-gray-300 rounded">
+               <div className="w-64 h-96 relative border-2 border-gray-300 rounded hover:text-green-500">
                   <Image
                      src="/website.jpg"
                      alt="Websites Gallery"
@@ -30,7 +30,7 @@ const Portfolio = () => {
                </div>
             </Link>
             <Link href="/portfolio/application">
-               <div className="w-64 h-96 relative border-2 border-gray-300 rounded">
+               <div className="w-64 h-96 relative border-2 border-gray-300 rounded hover:text-green-500">
                   <Image
                      src="/app.jpg"
                      alt="Application Gallery"
