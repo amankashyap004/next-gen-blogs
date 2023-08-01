@@ -15,8 +15,8 @@ export default function Home() {
             </p>
             <Button url="/" text="Explore Now" />
          </section>
-         <section className="w-full h-80 relative object-contain flex flex-col flex-1 gap-12">
-            <Image src="/image1.jpg" alt="hero-image" layout="fill" objectFit="contain" />
+         <section className="w-full h-80 relative flex flex-col flex-1 gap-12">
+            <Image src="/image1.jpg" alt="hero-image" fill={true} className="object-contain" />
          </section>
       </div>
    );
