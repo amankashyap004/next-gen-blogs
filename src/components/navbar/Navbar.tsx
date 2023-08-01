@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import DarkModeToggle from "../DarkModeToggle";
 
 const links = [
    {
@@ -41,6 +42,7 @@ const Navbar = () => {
             Next Gen Blogs
          </Link>
          <div className="flex items-center gap-4">
+            <DarkModeToggle />
             {links.map((links) => (
                <Link
                   key={links.id}
