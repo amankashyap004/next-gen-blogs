@@ -22,7 +22,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
    return (
       <ThemeContext.Provider value={{ toggle, mode }}>
-         <div className={`${mode}`}>{children}</div>
+         <div className={`transition-all duration-1000 ease ${mode}`}>{children}</div>
       </ThemeContext.Provider>
    );
 };
