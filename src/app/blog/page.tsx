@@ -1,98 +1,44 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Blog = () => {
+async function getData() {
+   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+   if (!res.ok) {
+      throw new Error("Failed to fetch data");
+   }
+
+   return res.json();
+}
+
+const Blog = async () => {
+   const data = await getData();
+
    return (
       <div className="flex items-start justify-start flex-col gap-4">
-         <Link href={`/blog/testId`}>
-            <section className="flex items-center justify-center gap-8">
-               <div className="relative">
-                  <Image
-                     src="/image1.jpg"
-                     alt=""
-                     className="object-cover"
-                     width={300}
-                     height={150}
-                  />
-               </div>
-               <div className="flex justify-center flex-col gap-4">
-                  <h1 className="text-lg">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </h1>
-                  <p className="text-base">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo autem aut quasi
-                     culpa omnis doloribus nobis sapiente veritatis sequi velit?
-                  </p>
-               </div>
-            </section>
-         </Link>
-         <Link href={`/blog/testId`}>
-            <section className="flex items-center justify-center gap-8">
-               <div className="relative">
-                  <Image
-                     src="/image1.jpg"
-                     alt=""
-                     className="object-cover"
-                     width={300}
-                     height={150}
-                  />
-               </div>
-               <div className="flex justify-center flex-col gap-4">
-                  <h1 className="text-lg">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </h1>
-                  <p className="text-base">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo autem aut quasi
-                     culpa omnis doloribus nobis sapiente veritatis sequi velit?
-                  </p>
-               </div>
-            </section>
-         </Link>
-         <Link href={`/blog/testId`}>
-            <section className="flex items-center justify-center gap-8">
-               <div className="relative">
-                  <Image
-                     src="/image1.jpg"
-                     alt=""
-                     className="object-cover"
-                     width={300}
-                     height={150}
-                  />
-               </div>
-               <div className="flex justify-center flex-col gap-4">
-                  <h1 className="text-lg">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </h1>
-                  <p className="text-base">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo autem aut quasi
-                     culpa omnis doloribus nobis sapiente veritatis sequi velit?
-                  </p>
-               </div>
-            </section>
-         </Link>
-         <Link href={`/blog/testId`}>
-            <section className="flex items-center justify-center gap-8">
-               <div className="relative">
-                  <Image
-                     src="/image1.jpg"
-                     alt=""
-                     className="object-cover"
-                     width={300}
-                     height={150}
-                  />
-               </div>
-               <div className="flex justify-center flex-col gap-4">
-                  <h1 className="text-lg">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </h1>
-                  <p className="text-base">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo autem aut quasi
-                     culpa omnis doloribus nobis sapiente veritatis sequi velit?
-                  </p>
-               </div>
-            </section>
-         </Link>
+         {data.map(
+            (item: { body: ReactNode; title: ReactNode; id: React.Key | null | undefined }) => (
+               <Link href={`/blog/${item.id}`} key={item.id}>
+                  <div className="flex items-start justify-start gap-8 w-full">
+                     <div className="w-1/5">
+                        <div className="relative w-80 h-40">
+                           <Image
+                              src="/image1.jpg"
+                              alt="img"
+                              className="object-contain"
+                              fill={true}
+                           />
+                        </div>
+                     </div>
+                     <div className="flex justify-start items-start flex-col gap-4 w-4/5">
+                        <h1 className="text-lg">{item.title}</h1>
+                        <p className="text-base">{item.body}</p>
+                     </div>
+                  </div>
+               </Link>
+            )
+         )}
       </div>
    );
 };
