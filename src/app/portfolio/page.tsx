@@ -29,7 +29,7 @@ const Portfolio = () => {
                   <span className="absolute bottom-2 left-2 font-semibold">Websites</span>
                </div>
             </Link>
-            <Link href="/portfolio/application">
+            <Link href="/portfolio/applications">
                <div className="w-64 h-96 relative border-2 border-gray-300 rounded hover:text-green-500">
                   <Image
                      src="/app.jpg"
@@ -37,7 +37,7 @@ const Portfolio = () => {
                      fill={true}
                      className="opacity-50 object-cover"
                   />
-                  <span className="absolute bottom-2 left-2 font-semibold">Application</span>
+                  <span className="absolute bottom-2 left-2 font-semibold">Applications</span>
                </div>
             </Link>
          </div>
