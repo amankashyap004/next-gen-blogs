@@ -29,7 +29,7 @@ const Category: React.FC<CategoryProps> = ({ params }) => {
     <div>
       <h1 className="text-green-500">{params.category}</h1>
       {data.map((item) => (
-        <section className="flex gap-10 mt-4 mb-8 flex-1 w-3/4" key={item.id}>
+        <section className={`flex gap-10 mt-4 mb-8 flex-1 w-3/4 ${item.id % 2 === 1 ? '' : 'flex-row-reverse'}`} key={item.id}>
           <div className="flex justify-center flex-col flex-1 gap-4">
             <h1 className="text-lg">{item.title}</h1>
             <p className="text-base"> {item.desc}</p>
